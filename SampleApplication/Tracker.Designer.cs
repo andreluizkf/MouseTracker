@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lstMouse = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -45,39 +45,40 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
             this.Usuario = new System.Windows.Forms.Label();
+            this.Salvar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listView1);
+            this.groupBox1.Controls.Add(this.lstMouse);
             this.groupBox1.Controls.Add(this.curXYLabel);
             this.groupBox1.Location = new System.Drawing.Point(3, 77);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(391, 150);
+            this.groupBox1.Size = new System.Drawing.Size(521, 150);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Mouse";
             // 
-            // listView1
+            // lstMouse
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstMouse.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader4,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader5,
             this.columnHeader7});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(6, 38);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(379, 106);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lstMouse.HideSelection = false;
+            this.lstMouse.Location = new System.Drawing.Point(6, 38);
+            this.lstMouse.Name = "lstMouse";
+            this.lstMouse.Size = new System.Drawing.Size(502, 106);
+            this.lstMouse.TabIndex = 1;
+            this.lstMouse.UseCompatibleStateImageBehavior = false;
+            this.lstMouse.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -101,7 +102,7 @@
             // 
             // columnHeader5
             // 
-            this.columnHeader5.Text = "Delta";
+            this.columnHeader5.Text = "Usuario";
             // 
             // columnHeader7
             // 
@@ -120,7 +121,7 @@
             this.groupBox2.Controls.Add(this.listView2);
             this.groupBox2.Location = new System.Drawing.Point(3, 233);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(391, 150);
+            this.groupBox2.Size = new System.Drawing.Size(521, 150);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Keyboard";
@@ -137,7 +138,7 @@
             this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(6, 19);
             this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(379, 125);
+            this.listView2.Size = new System.Drawing.Size(502, 125);
             this.listView2.TabIndex = 1;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -170,12 +171,12 @@
             this.columnHeader15.Text = "Control";
             this.columnHeader15.Width = 50;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtUsuario.Location = new System.Drawing.Point(62, 15);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(284, 20);
+            this.txtUsuario.TabIndex = 1;
             // 
             // Usuario
             // 
@@ -186,13 +187,24 @@
             this.Usuario.TabIndex = 2;
             this.Usuario.Text = "Usuário:";
             // 
+            // Salvar
+            // 
+            this.Salvar.Location = new System.Drawing.Point(381, 12);
+            this.Salvar.Name = "Salvar";
+            this.Salvar.Size = new System.Drawing.Size(143, 23);
+            this.Salvar.TabIndex = 4;
+            this.Salvar.Text = "Salvar Arquivo";
+            this.Salvar.UseVisualStyleBackColor = true;
+            this.Salvar.Click += new System.EventHandler(this.Salvar_Click);
+            // 
             // Tracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 387);
+            this.Controls.Add(this.Salvar);
             this.Controls.Add(this.Usuario);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Tracker";
@@ -212,7 +224,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label curXYLabel;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lstMouse;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -226,8 +238,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
         private System.Windows.Forms.ColumnHeader columnHeader7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label Usuario;
+        private System.Windows.Forms.Button Salvar;
     }
 }
 
